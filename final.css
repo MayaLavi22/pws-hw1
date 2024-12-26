@@ -1,0 +1,55 @@
+/* General Body Styles */
+body {
+  font-family: cursive;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack items vertically */
+  height: 100vh;
+  color: #333;
+  text-align: center; /* Center text */
+}
+
+/* Header Styles */
+h1 {
+  font-size: 2.5em;
+  color: #0b256a;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+/* Price (Savings) Display */
+h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 20px;
+}
+
+/* Image Styling */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+  max-height: 400px; /* Ensure the image has a reasonable height */
+  object-fit: contain; /* Keeps the image proportion intact */
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  img {
+    max-height: 300px;
+  }
+}

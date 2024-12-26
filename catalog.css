@@ -1,0 +1,194 @@
+/* General Body Styles */
+body {
+  font-family: cursive;
+  margin: 20px;
+  text-align: center;
+  background-color: #f4f7fc;
+}
+
+/* Header Styles */
+header {
+  background-color: #0b256a;
+  color: #fff;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+/* Products Container - Fixed 3x3 Grid */
+#products-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
+  gap: 20px; /* Space between cards */
+  justify-items: center; /* Center-align items horizontally */
+  margin: 0 auto;
+  padding: 0 10px;
+  overflow: auto; /* Allow scrolling on smaller screens if necessary */
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 15px;
+  text-align: center;
+  width: 100%; /* Ensure it takes full available width */
+  height: 100%; /* Ensure equal height for all cards */
+  max-width: 300px; /* Prevent cards from growing too large */
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Product Image */
+.product-card img {
+  width: 100%;
+  height: 150px; /* Fixed height for images */
+  object-fit: cover; /* Ensures the image scales properly */
+  border-radius: 5px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Image Hover Effect */
+.product-card img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Discount Badge */
+.product-card .discount {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: none;
+}
+
+.product-card:hover .discount {
+  display: block;
+}
+
+/* Product Information */
+.product-info {
+  margin-top: 10px;
+  height: auto; /* Allow flexibility for descriptions */
+}
+
+.product-info h3 {
+  font-size: 1.1em;
+  margin: 5px 0;
+}
+
+.product-info p {
+  font-size: 0.9em;
+  color: #555;
+  line-height: 1.2em;
+}
+
+/* Price Styling */
+.product-info .price {
+  color: #f44336;
+  text-decoration: line-through;
+  position: absolute;
+  bottom: 40px;
+  left: 10px;
+  right: 10px;
+  text-align: center;
+}
+
+.product-info .discounted-price {
+  color: #4caf50;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  text-align: center;
+}
+
+/* Polaroid Frame Styling */
+.polaroid-frame {
+  padding: 10px;
+  background: #fff;
+  border: 10px solid #0b256a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  height: 500px;
+}
+
+/* Responsive Design - Small Screens */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 0;
+  }
+
+  /* Products Container: Fixed 3 columns even on small screens */
+  #products-container {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+  }
+
+  /* Product card width */
+  .product-card {
+    max-width: 90%; /* Let the cards expand to 90% of the container */
+    margin: 10px;
+  }
+
+  /* Adjust text sizes */
+  .product-info h3 {
+    font-size: 1em;
+  }
+
+  .product-info p {
+    font-size: 0.8em;
+  }
+
+  .product-info .price,
+  .product-info .discounted-price {
+    font-size: 0.9em;
+  }
+
+  .product-card img {
+    height: 120px; /* Adjust image height */
+  }
+}
+
+/* Responsive Design - Very Small Screens */
+@media (max-width: 480px) {
+  header {
+    font-size: 1.5em;
+  }
+
+  /* Keep the 3 columns, but allow scrolling horizontally */
+  #products-container {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Product card width */
+  .product-card {
+    max-width: 100%; /* Let the cards take full width */
+  }
+
+  .product-info h3 {
+    font-size: 0.9em;
+  }
+
+  .product-info p {
+    font-size: 0.7em;
+  }
+
+  .product-info .price,
+  .product-info .discounted-price {
+    font-size: 0.8em;
+  }
+
+  .product-card img {
+    height: 100px; /* Adjust image height for very small screens */
+  }
+}
