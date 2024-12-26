@@ -14,15 +14,14 @@ header {
   margin-bottom: 20px;
 }
 
-/* Products Container - Fixed 3x3 Grid */
+/* Products Container - Responsive Grid */
 #products-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
   gap: 20px; /* Space between cards */
   justify-items: center; /* Center-align items horizontally */
   margin: 0 auto;
   padding: 0 10px;
-  overflow: auto; /* Allow scrolling on smaller screens if necessary */
 }
 
 /* Product Card */
@@ -118,27 +117,24 @@ header {
   border: 10px solid #0b256a;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  height: 500px;
+  height: 400px;
 }
 
-/* Responsive Design - Small Screens */
+/* Responsive Design - Mobile Screens */
 @media (max-width: 768px) {
-  header {
-    padding: 10px 0;
-  }
-
-  /* Products Container: Fixed 3 columns even on small screens */
   #products-container {
-    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    gap: 15px; /* Adjust gap for smaller screens */
   }
 
-  /* Product card width */
   .product-card {
-    max-width: 90%; /* Let the cards expand to 90% of the container */
-    margin: 10px;
+    max-width: 100%; /* Let the cards take full width */
   }
 
-  /* Adjust text sizes */
+  .product-card img {
+    height: 120px; /* Adjust image height */
+  }
+
   .product-info h3 {
     font-size: 1em;
   }
@@ -150,45 +146,5 @@ header {
   .product-info .price,
   .product-info .discounted-price {
     font-size: 0.9em;
-  }
-
-  .product-card img {
-    height: 120px; /* Adjust image height */
-  }
-}
-
-/* Responsive Design - Very Small Screens */
-@media (max-width: 480px) {
-  header {
-    font-size: 1.5em;
-  }
-
-  /* Keep the 3 columns, but allow scrolling horizontally */
-  #products-container {
-    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
-    overflow-x: auto; /* Allow horizontal scrolling */
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Product card width */
-  .product-card {
-    max-width: 100%; /* Let the cards take full width */
-  }
-
-  .product-info h3 {
-    font-size: 0.9em;
-  }
-
-  .product-info p {
-    font-size: 0.7em;
-  }
-
-  .product-info .price,
-  .product-info .discounted-price {
-    font-size: 0.8em;
-  }
-
-  .product-card img {
-    height: 100px; /* Adjust image height for very small screens */
   }
 }
